@@ -5,7 +5,7 @@ HEIGHT = 480
 FPS = 60
 GAME = "Platformer"
 
-RED = (255,240,32)
+RED = (144,185,165)
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption(GAME)
