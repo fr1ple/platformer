@@ -1,0 +1,7 @@
+
+WIDTH = 640
+HEIGHT = 480
+FPS = 60
+GAME = "Platformer"
+
+RED = (144,185,165)
