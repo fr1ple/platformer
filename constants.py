@@ -1,7 +1,10 @@
 
 WIDTH = 640
-HEIGHT = 480
-FPS = 60
+HEIGHT = 640
+FPS = 120
 GAME = "Platformer"
 
-RED = (144,185,165)
+RED = (255, 0 ,0)
+
+
+PLAYER_SHIP_WIDTH = 50
