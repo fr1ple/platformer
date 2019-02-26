@@ -1,5 +1,3 @@
-
-
 import pygame
 from settings import player_image
 from constants import *
@@ -17,3 +15,16 @@ class Player(pygame.sprite.Sprite):
 
           self.rect = self.image.get_rect()
           self.rect.midbottom = (WIDTH / 2, HEIGHT -20)
+     
+     def update(self):
+          self.speedx = 0
+          key_state = pygame.key.get_pressed()
+          if(key_state[pygame.K_LEFT]):
+               self.speedx = -7
+          if (key_state[pygame.K_RIGHT]):
+               self.speedx = 7
+          self.rect.x += self.speedx     
+          if (self.rect.x < 0):
+               self.rect.x = 0
+          if (self.rect.right > WIDTH):
+               self.rect.right = WIDTH   

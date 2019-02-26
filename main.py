@@ -1,6 +1,7 @@
 import pygame
 from  constants import *
 from player import Player
+from enemy import Enemy
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -9,7 +10,9 @@ clock = pygame.time.Clock()
 
 all_sprites = pygame.sprite.Group()
 player = Player()
+enemy = Enemy()
 all_sprites.add(player)
+all_sprites.add(enemy)
 
 running = True
 while running:
