@@ -9,4 +9,14 @@ class Level1(pygame.sprite.Sprite):
         pygame.sprite.Sprite.__init__(self)
         raw_image = pygame.image.load(level1_image).convert()
         w = raw_image.get_rect().width
-        scale_coefficent= WIDTH / w
+        scale_coefficent = WIDTH / w
+        self.images = [\
+            pygame.transform.rotozoom(raw_image, 0, scale_coefficent),\
+            pygame.transform.rotozoom(raw_image, 180, scale_coefficent)\
+        ]
+        
+        h = self.images[0].get_rect().height
+        self.block = pygame.Surface((WIDTH,2*h))
+       
+        self.block.blit(self.images[0], (0, 0))
+        self.block.blit(self.images[1], (0, h))
