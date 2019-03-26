@@ -5,7 +5,7 @@ from constants import *
 
 
 class Shoot(pygame.sprite.Sprite):
-    def __init__(self):
+    def __init__(self, x, y):
         pygame.sprite.Sprite.__init__(self)
         ss = Spritesheet(shoot_image)
         self.bullets = ss.images_at([\
@@ -21,7 +21,7 @@ class Shoot(pygame.sprite.Sprite):
         self.image = self.bullets[0]
         self.idx = 0
         self.rect = self.image.get_rect()
-        self.rect.center = (WIDTH / 2, HEIGHT /2)
+        self.rect.center = (x, y)
         self.speed = 5
         self.frames_count = 0
         self.animate_each_frame = 10
