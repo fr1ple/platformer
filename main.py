@@ -2,6 +2,7 @@ import pygame
 from  constants import *
 from player import Player
 from enemy import Enemy
+from shoot import Shoot
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -19,9 +20,14 @@ while running:
     clock.tick(FPS)
 
     for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 running = False
+            if event.key == pygame.K_SPACE:
+                all_sprites.add(Shoot())
+
 
     all_sprites.update()            
                 

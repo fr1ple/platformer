@@ -20,3 +20,14 @@ class Level1(pygame.sprite.Sprite):
        
         self.block.blit(self.images[0], (0, 0))
         self.block.blit(self.images[1], (0, h))
+
+        self.block_height = self.block.get_rect().height
+
+        self.speed = 5
+        self.position = HEIGHT - self.block_height
+
+    def update(self):
+        self.position1 += self.speed
+        self.position2 += self.speed
+        if(self.position1 >=HEIGHT):
+            self.position1 = self.position2
